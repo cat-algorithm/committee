@@ -50,7 +50,7 @@ module Committee
     # @param [Hash] hash
     # @return [Committee::Driver]
     def self.load_from_data(hash, schema_path = nil, parser_options = {})
-      if hash['openapi']&.start_with?('3.0.')
+      if hash['openapi']&.start_with?('3.')
         # From the next major version, we want to ensure `{ strict_reference_validation: true }`
         # as a parser option here, but since it may break existing implementations, just warn
         # if it is not explicitly set. See: https://github.com/interagent/committee/issues/343#issuecomment-997400329
